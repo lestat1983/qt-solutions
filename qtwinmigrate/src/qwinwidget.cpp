@@ -223,7 +223,7 @@ void QWinWidget::center()
     }
     RECT r;
     GetWindowRect(hParent, &r);
-    setGeometry((r.right-r.left)/2+r.left, (r.bottom-r.top)/2+r.top,0,0);
+    setGeometry(((r.right-r.left)/2+r.left) / devicePixelRatio(), ((r.bottom-r.top)/2+r.top) / devicePixelRatio(),0,0);
 }
 
 /*!

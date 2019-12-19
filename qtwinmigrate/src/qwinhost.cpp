@@ -307,7 +307,7 @@ void QWinHost::showEvent(QShowEvent *e)
     QWidget::showEvent(e);
 
     if (hwnd)
-	SetWindowPos(hwnd, HWND_TOP, 0, 0, width(), height(), SWP_SHOWWINDOW);
+	SetWindowPos(hwnd, HWND_TOP, 0, 0, width() * devicePixelRatio(), height() * devicePixelRatio(), SWP_SHOWWINDOW);
 }
 
 /*!
@@ -329,7 +329,7 @@ void QWinHost::resizeEvent(QResizeEvent *e)
     QWidget::resizeEvent(e);
 
     if (hwnd)
-	SetWindowPos(hwnd, HWND_TOP, 0, 0, width(), height(), 0);
+	SetWindowPos(hwnd, HWND_TOP, 0, 0, width() * devicePixelRatio(), height() * devicePixelRatio(), 0);
 }
 
 /*!
